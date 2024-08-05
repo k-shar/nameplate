@@ -7,3 +7,14 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .catch(error => console.error('Error fetching the markdown file:', error));
 });
+
+
+// Utility function to toggle classes
+function toggleClass(className) {
+    document.getElementById("nameplate").classList.toggle(className);
+}
+
+// Add event listeners for buttons
+document.getElementById("bold").addEventListener("click", () => toggleClass("font-bold"));
+document.getElementById("italic").addEventListener("click", () => toggleClass("italic"));
+document.getElementById("underline").addEventListener("click", () => toggleClass("underline"));

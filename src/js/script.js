@@ -7,10 +7,3 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .catch(error => console.error('Error fetching the markdown file:', error));
 });
-
-
-// Utility function to toggle classes
-function toggleClass(className) {
-    document.getElementById("nameplate").classList.toggle(className);
-}
-

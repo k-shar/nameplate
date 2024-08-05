@@ -1,7 +1,7 @@
 const formats = [
-    { id: 'bold', text: 'B', className: 'bold' },
-    { id: 'italic', text: 'I', className: 'italic' },
-    { id: 'underline', text: 'U', className: 'underline' }
+    { id: 'bold', text: 'B', className: 'bold', fn: bold },
+    { id: 'italic', text: 'I', className: 'italic', fn: italic },
+    { id: 'underline', text: 'U', className: 'underline', fn: underline },
 ];
 
 const container = document.getElementById('formatting-buttons');
@@ -23,13 +23,20 @@ formats.forEach(format => {
     label.appendChild(input);
     label.appendChild(span);
     container.appendChild(label);
+
+    // Add event listener
+    input.addEventListener('change', format.fn);  // Use 'change' event to handle checkbox changes
 });
 
+function bold() {
+    document.getElementById("nameplate").classList.toggle("font-bold");
+}
 
-document.getElementById("bold").addEventListener("click", () => toggleClass("font-bold"));
-document.getElementById("underline").addEventListener("click", () => toggleClass("underline"));
-document.getElementById("italic").addEventListener("click", () => {
-    // see if checkbox is clicked
+function underline() {
+    document.getElementById("nameplate").classList.toggle("underline");
+}
+
+function italic() {
     const italic = document.getElementById("italic").checked;
     const italic_file = italic ? 'nameplate-italic.md' : 'nameplate.md';
     fetch("/src/md/" + italic_file)
@@ -39,4 +46,4 @@ document.getElementById("italic").addEventListener("click", () => {
             contentDiv.innerText = text;
         })
         .catch(error => console.error('Error fetching the markdown file:', error));
-});
+}

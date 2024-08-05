@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(response => response.text())
         .then(text => {
             const contentDiv = document.getElementById('nameplate');
-            contentDiv.innerText = text;
+            contentDiv.value = text;
         })
         .catch(error => console.error('Error fetching the markdown file:', error));
 });

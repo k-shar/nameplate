@@ -37,7 +37,7 @@ function underline() { nameplate.classList.toggle("underline"); }
 function italic() {
     const italic = document.getElementById("italic").checked;
     const italic_file = italic ? 'nameplate-italic.md' : 'nameplate.md';
-    fetch("/src/md/" + italic_file)
+    fetch("./src/md/" + italic_file)
         .then(response => response.text())
         .then(text => {
             nameplate.innerText = text;

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('/src/md/nameplate.md')
+    fetch('./src/md/nameplate.md')
         .then(response => response.text())
         .then(text => {
             const contentDiv = document.getElementById('nameplate');

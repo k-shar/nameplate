@@ -24,17 +24,15 @@ formats.forEach(format => {
     label.appendChild(span);
     container.appendChild(label);
 
-    // Add event listener
-    input.addEventListener('change', format.fn);  // Use 'change' event to handle checkbox changes
+    input.addEventListener('change', format.fn);
 });
 
-function bold() {
-    document.getElementById("nameplate").classList.toggle("font-bold");
-}
 
-function underline() {
-    document.getElementById("nameplate").classList.toggle("underline");
-}
+const nameplate = document.getElementById('nameplate');
+
+function bold() { nameplate.classList.toggle("font-bold"); }
+
+function underline() { nameplate.classList.toggle("underline"); }
 
 function italic() {
     const italic = document.getElementById("italic").checked;
@@ -42,8 +40,7 @@ function italic() {
     fetch("/src/md/" + italic_file)
         .then(response => response.text())
         .then(text => {
-            const contentDiv = document.getElementById('nameplate');
-            contentDiv.innerText = text;
+            nameplate.innerText = text;
         })
         .catch(error => console.error('Error fetching the markdown file:', error));
 }

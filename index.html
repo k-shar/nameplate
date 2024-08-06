@@ -11,15 +11,28 @@
 
     <div class="border-gray-700 border p-4">
 
-        <div id="nameplate" class="text-white whitespace-pre font-mono pb-4 pr-4 border border-gray-700 rounded">
-            <pre id="art" class="whitespace-pre"></pre>
+        <div id="nameplate" class="text-white whitespace-pre font-mono p-4 border border-gray-700 rounded">
+            <pre class="whitespace-pre"></pre>
         </div>
 
         <div id="formatting-buttons" class="flex mt-4 justify-start"> </div>
 
+        <div id="canvas-container" class="h-96 w-100"></div>
+
+        <div id="flowers" class="text-white whitespace-pre font-mono p-0 border border-gray-700 rounded">
+            <pre class="whitespace-pre"></pre>
+        </div>
     </div>
+    
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/DragControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
 
     <script src="./src/js/script.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./src/js/draw.js"></script>
 </body>
 </html>

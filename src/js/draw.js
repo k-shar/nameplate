@@ -157,8 +157,8 @@ function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
     lights.forEach(light => light.helper.update());
-    lights.forEach(light => scene.add(light.helper));
-
+    lights.forEach(light => scene.add(light.helper)); 
+    setSize();
 }
 
 function setSize() {
@@ -172,6 +172,7 @@ function setSize() {
 // Initialize everything
 initScene();
 animate();
-setSize();
 
-
+document.addEventListener("DOMContentLoaded", function() {
+    setSize();
+});
